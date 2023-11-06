@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.css-qluo93{
+  border:none !important;
+}
+.css-qluo93:focus-visible, .css-qluo93[data-focus-visible] {
+  border: none !important;
+  box-shadow: none !important;
+}
+.css-vyy0n0 {
+  border:none !important;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+  background-color: #EFF2F5;
+  margin: 0;
+width: 100% !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
