@@ -92,11 +92,19 @@ console.log(capitalGainsAmount)
             </FormControl>
             <FormControl className=" flex md:flex-row flex-col flex-1" >
               <FormLabel>Country</FormLabel>
-              <select placeholder="Select country" value={country} onChange={(e)=>{setCountry(e.target.value)}} background={"#EFF2F5"} className="font-inter font-[500] text-[18px] text-[#0F1629] focus:bg-white">
-                <option  value="Australia" style={{ backgroundImage: `url(../assets/country.svg)` }}>
-                🇦🇺  Australia
+             <Select placeholder="Select country" value={country} onChange={(e)=>{setCountry(e.target.value)}} background={"#EFF2F5"}>
+                <option value="Australia">
+                  <Box display="flex" alignItems="center">
+                    <Image
+                      src={country}
+                      alt="country"
+                      width="20"
+                      marginRight="2"
+                    />
+                    Australia
+                  </Box>
                 </option>
-              </select>
+              </Select>
             </FormControl>
           </Flex>
           <Flex  paddingTop={"28px"} className="md:flex-row flex-col md:gap-[40px] gap-[20px]">
