@@ -141,7 +141,7 @@ const Faq = () => {
 Still have doubts? <span className='text-[#0052FE] text-[14px] font-[700] underline'>Consult with a crypto taxation expert</span>
         </Text>
         </div>
-        <div  className='pb-6 md:pb-8 border-b border-[#C9CFDD99]'>
+        <div  className=''>
         <h3 className='text-[#0B1426] mt-4 md:mt-6 text-lg md:text-xl font-inter font-semibold leading-6'>12. How do I calculate my crypto tax in Australia?</h3>
         <Text className='mt-[10px] text-[#3E424A] text-[16px] font-inter leading-[160%] font-[500]'>To calculate your crypto tax in Australia accurately, you need to consider both income tax and capital gains tax.
 <br></br>

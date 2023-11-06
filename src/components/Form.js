@@ -66,7 +66,7 @@ console.log(capitalGainsAmount)
   return (
     <div className=" bg-white p-[17px] md:px-[75px] md:py-[35px] rounded-xl">
       <div>
-        <h1 className="font-[700] text-[24px] text-center md:text-[36px] text-[#0F1629] font-inter md:px-12 ">
+        <h1 className="font-[700] text-[20px] text-center md:text-[36px] text-[#0F1629] font-inter md:px-12  ">
           Free Crypto Tax Calculator Australia
         </h1>
         <form >
@@ -76,8 +76,8 @@ console.log(capitalGainsAmount)
             paddingBottom={"28px"}
             className="md:pt-[40px] pt-[30px]"
           >
-            <FormControl className="flex md:flex-row flex-col flex-1">
-              <FormLabel className=" font-inter font-[400] text-[15px]  text-[#0F1629] mt-1">
+            <FormControl className="flex md:flex-row flex-col flex-1" >
+              <FormLabel className=" font-inter font-[400] text-[15px] md:w-[200px]  text-[#0F1629] mt-1">
                 Financial Year
               </FormLabel>
               <Select
@@ -85,63 +85,55 @@ console.log(capitalGainsAmount)
               onChange={(e)=>{setFinancialYear(e.target.value)}}
                 placeholder="Select year"
                 background={"#EFF2F5"}
-                className=" font-inter font-[500] text-[18px] text-[#0F1629]"
+                className=" font-inter font-[500] text-[18px] text-[#0F1629] focus:bg-white"
               >
                 <option>FY 2023-24</option>
               </Select>
             </FormControl>
-            <FormControl className=" flex md:flex-row flex-col flex-1">
+            <FormControl className=" flex md:flex-row flex-col flex-1" >
               <FormLabel>Country</FormLabel>
-              <Select placeholder="Select country" value={country} onChange={(e)=>{setCountry(e.target.value)}} background={"#EFF2F5"}>
-                <option value="Australia">
-                  <Box display="flex" alignItems="center">
-                    <Image
-                      src={country}
-                      alt="country"
-                      width="20"
-                      marginRight="2"
-                    />
-                    Australia
-                  </Box>
+              <select placeholder="Select country" value={country} onChange={(e)=>{setCountry(e.target.value)}} background={"#EFF2F5"} className="font-inter font-[500] text-[18px] text-[#0F1629] focus:bg-white">
+                <option  value="Australia" style={{ backgroundImage: `url(../assets/country.svg)` }}>
+                🇦🇺  Australia
                 </option>
-                {/* Add more options as needed */}
-              </Select>
+              </select>
             </FormControl>
           </Flex>
           <Flex  paddingTop={"28px"} className="md:flex-row flex-col md:gap-[40px] gap-[20px]">
-            <FormControl className="">
+            <FormControl className="" isRequired>
               <FormLabel className=" font-inter font-[200] text-[15px] text-[#0F1629] mt-1 opacity-2">
                 Enter purchase price of Crypto
               </FormLabel>
               <InputGroup
-                background={"#EFF2F5"}
-                className=" font-inter font-[400] text-[16px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px]"
-              >
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="#0F1629"
-                  fontSize="18px"
-                  fontWeight={"500"}
-                  children="$"
-                  marginTop={"8px"}
-                />
-                <Input
-                value={purchasePrice}
-                onChange={(e)=>{
-                    setPurchasePrice(Number(e.target.value))
-                }}
-                  placeholder="Enter amount"
-                  className=" border-none h-[56px] focus:border-none"
-                />
-              </InputGroup>
+              background={"#EFF2F5"}
+              className=" font-inter font-[400] text-[16px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px] hover:border-2 hover:border-blue-600 hover:bg-white "
+            >
+              <InputLeftElement
+                pointerEvents="none"
+                color="#0F1629"
+                fontSize="18px"
+                fontWeight={"500"}
+                children="$"
+                marginTop={"8px"}
+              />
+              <Input
+              value={purchasePrice}
+              onChange={(e)=>{
+                  setPurchasePrice(Number(e.target.value))
+              }}
+                placeholder="Enter amount"
+                className=" border-none h-[56px] focus:border-none "
+              />
+            </InputGroup>
+              
             </FormControl>
-            <FormControl>
+            <FormControl isRequired>
               <FormLabel className=" font-inter font-[200] text-[15px] text-[#0F1629] mt-1 opacity-2">
                 Enter sale price of Crypto
               </FormLabel>
               <InputGroup
                 background={"#EFF2F5"}
-                className=" font-inter font-[400] text-[15px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px]"
+                className=" font-inter font-[400] text-[15px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px] hover:border-2 hover:border-blue-600 hover:bg-white"
               >
                 <InputLeftElement
                   pointerEvents="none"
@@ -161,13 +153,13 @@ console.log(capitalGainsAmount)
             </FormControl>
           </Flex>
           <Flex  paddingTop={"28px"} className="md:flex-row flex-col md:gap-[40px] gap-[20px]">
-            <FormControl>
+            <FormControl isRequired>
               <FormLabel className=" font-inter font-[200] text-[14px] text-[#0F1629] ">
                 Enter your Expenses
               </FormLabel>
               <InputGroup
                 background={"#EFF2F5"}
-                className=" font-inter font-[400] text-[15px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px]"
+                className=" font-inter font-[400] text-[15px] w-[200px] text-[#0F1629] h-[56px] flex items-center rounded-[8px] hover:border-2 hover:border-blue-600 hover:bg-white"
               >
                 <InputLeftElement
                   pointerEvents="none"
@@ -214,7 +206,7 @@ console.log(capitalGainsAmount)
                 background={"#EFF2F5"}
                 value={annualIncome}
                 onChange={(e)=>{setAnnualIncome(e.target.value)}}
-                className=" font-inter font-[500] text-[18px] text-[#0F1629]"
+                className=" font-inter font-[500] text-[18px] text-[#0F1629] hover:border-2 hover:border-blue-600 hover:bg-white h-[56px]"
               >
               <option value="$0 - $18,200">$0 - $18,200</option>
               <option value="$18,201 - $45,000">$18,201 - $45,000</option>
