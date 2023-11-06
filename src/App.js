@@ -13,7 +13,7 @@ function App() {
     <Form/>
     <Faq/>
     </div>
-    <img src={service} alt="service" height={'576px'} width={'426px'}/>
+    <img src={service} alt="service"  width={'426px'}/>
     </div>
 
     </div>
