@@ -1,6 +1,6 @@
-import { Box, Heading, List, ListItem, Text } from '@chakra-ui/react';
+import { Box, Heading, List, ListItem, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react'
-
+import table from "../assets/table.svg"
 const Faq = () => {
     const faqData = [
         {
@@ -87,7 +87,7 @@ const Faq = () => {
             answer: `Transferring cryptocurrency from one wallet to another that you own in Australia is not subject to tax, as it is not recognised as a taxable event, and capital gains tax is not triggered. Nevertheless, it's essential to keep detailed records of these transfers, particularly if you are utilising automated crypto tax software like KoinX. KoinX, as a reliable crypto tax software, can streamline the process, making it easier to maintain accurate and efficient tax records and reporting while ensuring compliance with Australian tax regulations.
             `,
           },
-        // Add more FAQ items as needed
+
       ];
   return (
     <Box className="bg-white p-6 md:p-10 rounded-xl w-full mt-8">
@@ -109,10 +109,68 @@ const Faq = () => {
                 ))}
               </ul>
             ) : (
-              <Text className='mt-2 md:mt-3 text-base md:text-lg'>{faqItem.answer}</Text>
+              <Text className='mt-[10px] text-[#3E424A] text-[16px] font-inter leading-[160%] font-[500]'>{faqItem.answer}</Text>
             )}
           </div>
         ))}
+        <div  className='pb-6 md:pb-8 border-b border-[#C9CFDD99]'>
+        <h3 className='text-[#0B1426] mt-4 md:mt-6 text-lg md:text-xl font-inter font-semibold leading-6'>11. How do I use a cryptocurrency tax calculator?</h3>
+        <Text className='mt-[10px] text-[#3E424A] text-[16px] font-inter leading-[160%] font-[500]'>In order to use a cryptocurrency tax calculator, you need to input information about your cryptocurrency transactions.
+        <br></br>
+        After you enter your information, the cryptocurrency tax calculator will calculate the gain or loss on every transaction.
+        <br></br>
+        This includes:
+        <br></br>
+        <br></br>
+        1. The financial year you want to calculate your taxes for.
+        <br></br>
+        2. The country you want to calculate your taxes for.
+        <br></br>
+        3. The purchase price of the coin.
+        <br></br>
+        4. The sale price of the coin.
+        <br></br>
+        <br></br>
+        You will get results that mention the following:
+        <br></br>
+1. The total profit/loss you made
+<br></br>
+2. The tax you’re liable to pay
+<br></br>
+<br></br>
+Still have doubts? <span className='text-[#0052FE] text-[14px] font-[700] underline'>Consult with a crypto taxation expert</span>
+        </Text>
+        </div>
+        <div  className='pb-6 md:pb-8 border-b border-[#C9CFDD99]'>
+        <h3 className='text-[#0B1426] mt-4 md:mt-6 text-lg md:text-xl font-inter font-semibold leading-6'>12. How do I calculate my crypto tax in Australia?</h3>
+        <Text className='mt-[10px] text-[#3E424A] text-[16px] font-inter leading-[160%] font-[500]'>To calculate your crypto tax in Australia accurately, you need to consider both income tax and capital gains tax.
+<br></br>
+<br></br>
+        <span className='font-[700]'>Income Tax</span>
+        <br></br>
+        In Australia, when an individual (investor) sells, trades, spends, earns (salary, mining, interest) or gifts cryptocurrency, the net capital gain is taxed at the same rate as their Income Tax. This tax rate is determined based on their total income for the tax year.
+        <br></br>
+        <br></br>
+   <img src={table} alt="table"/>
+
+
+   <h3 className='text-[#0B1426] mt-4 md:mt-6 text-lg md:text-xl font-inter font-semibold leading-6'>Capital Gains Tax (CGT)</h3>
+   <br></br>
+   Calculate your capital gains or losses on cryptocurrency transactions using this formula:
+<br></br>
+<br></br>
+<span className='font-[700]'>Note: <br></br>
+Capital Proceeds (sale value or any form of receipt)<br></br>
+Cost Basis (costs incurred to acquire, hold, and dispose of the asset)</span>
+<br></br>
+<br></br>
+Your tax rate depends on whether you held the cryptocurrency for more than 12 months (long-term) or less (short-term). Long-term gains receive a 50% discount.
+<br></br>
+<br></br>
+
+Calculate your Australian crypto taxes accurately and effortlessly with KoinX's free crypto tax calculator for Australia. It simplifies the process, ensuring compliance with the latest tax rates and regulations making crypto tax calculations easy and precise.
+        </Text>
+        </div>
       </div>
     </Box>
   )
