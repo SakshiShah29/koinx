@@ -4,6 +4,7 @@ import service from "./assets/1.svg"
 import Navbar from './components/Navbar';
 import Faq from './components/Faq';
 import { Flex } from '@chakra-ui/react';
+import Footer from './components/Footer';
 
 function App() {
   return (<div className='w-100%'>
@@ -15,6 +16,7 @@ function App() {
     </div>
     <img src={service} alt="service"  width={'426px'}/>
     </div>
+    <Footer/>
 
     </div>
   );
