@@ -47,6 +47,7 @@ export default function Navbar() {
             <DesktopNav />
           </Flex>
         </Flex>
+        
         <Flex
         flex={{ base: 1, md: 'auto' }}
         ml={{ base: -2 }}
@@ -58,12 +59,13 @@ export default function Navbar() {
           aria-label={'Toggle Navigation'}
         />
       </Flex>
-       
+     
       </Flex>
-
+      
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
+
     </Box>
   )
 }
@@ -76,16 +78,14 @@ const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={4} ml={'auto'}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} className='py-[15px]'>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Box
                 as="a"
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
+                className=" font-inter text-[16px] text-[#0F1629] font-[600] "
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
@@ -96,10 +96,10 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
-
-      <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+<Spacer />
+      <button   href={'#'}  className=' ml-[15px] mt-2 bg-white h-[40px]  w-[112px] border-2 border-[#0052FE] rounded-[4px] font-inter text-[16px] text-[#0F1629] font-[600]'>
         Sign In
-      </Button>
+      </button>
     
     </Stack>
   );
@@ -108,11 +108,14 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+    <><Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
-    </Stack>
+      <button   href={'#'}  className=' bg-white h-[40px]  w-[112px] border-2 border-[#0052FE] rounded-[4px] font-inter text-[16px] text-[#0F1629] font-[600]'>
+      Sign In
+    </button>
+    </Stack></>
   )
 }
 
@@ -130,7 +133,7 @@ const MobileNavItem = ({ label, children, href }) => {
         _hover={{
           textDecoration: 'none',
         }}>
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+        <Text fontWeight={600} className=" font-inter text-[16px] text-[#0F1629]">
           {label}
         </Text>
         {children && (
